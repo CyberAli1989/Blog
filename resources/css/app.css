@@ -1,7 +1,7 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
 /*@import "bootstrap/dist/css/bootstrap.rtl.min.css";*/
 @import "vazirmatn/misc/Farsi-Digits/Vazirmatn-FD-font-face.css";
@@ -13,6 +13,8 @@
 body{
     direction: rtl;
 }
-*:focus{
-    outline:none !important;
-}
+
+/*.card img{*/
+/*    height: 200px;*/
+/*    object-fit: cover;*/
+/*}*/
