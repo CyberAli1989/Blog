@@ -1,4 +1,3 @@
-
 <title>{{__("Reset Password")}}</title>
 
 @extends('auth.layout.auth-layout')
@@ -30,7 +29,8 @@
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" value="{{old('email', $request->email)}}" name="email" required=""
+                                    <input class="form-control" type="text" value="{{old('email', $request->email)}}"
+                                           name="email" required=""
                                            placeholder="{{__("Email")}}">
                                 </div>
                             </div>

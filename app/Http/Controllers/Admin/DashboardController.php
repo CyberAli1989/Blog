@@ -31,6 +31,11 @@ class DashboardController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        $notification = array(
+            'message' => 'Bay Bay ....',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('login')->with($notification);
     }
 }

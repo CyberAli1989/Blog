@@ -12,6 +12,9 @@
           type="text/css"/>
     <!-- Icons Css -->
     <link href="{{asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
+
+    <link href="{{asset('backend/assets/libs/toastr/build/toastr.min.css')}}" rel="stylesheet" type="text/css"/>
+
     <!-- App Css-->
     <link href="{{asset('backend/assets/css/app-rtl.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
 
@@ -34,8 +37,11 @@
 <script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/toastr/build/toastr.min.js')}}"></script>
 
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
+
+@include('components.toaster')
 
 </body>
 

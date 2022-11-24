@@ -26,6 +26,8 @@
           type="text/css"/>
     <!-- Icons Css -->
     <link href="{{asset('backend/assets/css/icons-rtl.min.css')}}" rel="stylesheet" type="text/css"/>
+
+    <link href="{{asset('backend/assets/libs/toastr/build/toastr.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
     <link href="{{asset('backend/assets/css/app-rtl.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -74,6 +76,7 @@
 <script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/toastr/build/toastr.min.js')}}"></script>
 
 
 <!-- apexcharts -->
@@ -96,6 +99,9 @@
 
 <!-- App js -->
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
+
+
+@include('components.toaster')
 </body>
 
 </html>

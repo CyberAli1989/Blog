@@ -51,7 +51,13 @@ class ProfileController extends Controller
 
         $data->save();
 
-        return redirect()->route('admin.profile.index');
+        $notification = array(
+            'message' => 'user has been updated',
+            'alert-type' => 'success'
+        );
+
+
+        return redirect()->route('admin.profile.index')->with($notification);
     }
 
 
