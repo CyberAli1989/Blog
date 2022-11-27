@@ -493,6 +493,7 @@ header .content .box .box-footer a {
   color: #e54b4b;
 }
 #hero .content h4 {
+  display: block;
   font-size: 1.2rem;
   margin: 10px 0;
   font-weight: 600;
