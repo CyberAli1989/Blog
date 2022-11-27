@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "start": "sass --watch public/frontend/assets/scss/main.scss public/frontend/assets/css/main.css"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -16,6 +17,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.2.1",
         "bootstrap": "^5.2.3",
         "vazirmatn": "^33.0.3"
     }

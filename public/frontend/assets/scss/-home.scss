@@ -1,0 +1,166 @@
+#hero {
+    .img-container {
+        border: 4px solid #9f9f9f;
+        overflow: hidden;
+        border-radius: 8px;
+        height: 600px;
+
+        img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        display: flex;
+        width: 80%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            margin: 10px 0;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: $red;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .btn-red {
+            background-color: $red;
+            color: $white;
+            width: 25%;
+            transition: $transition1;
+
+            &:hover {
+                background-color: lighten($red, 3%);
+            }
+        }
+    }
+}
+
+#hobbits {
+    .title {
+        text-align: center;
+
+        h2 {
+            color: $black;
+            position: relative;
+            font-weight: 600;
+
+            &:before {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 30px;
+                background-color: $red;
+                display: inline;
+                top: 58px;
+                left: calc(50% + 17px);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 30px;
+                background-color: $red;
+                top: 58px;
+                right: calc(50% + 17px);
+            }
+        }
+
+        span {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 100%;
+                border: 2px solid $red;
+                border-radius: 30px 30px 30px 0;
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 16px;
+                top: 100%;
+                height: 16px;
+                left: 0px;
+                border: 2px solid $red;
+                border-radius: 30px 0 30px 30px;
+                transform: rotate(45deg);
+            }
+        }
+
+        p{
+            width: 60%;
+            font-size: 1rem;
+            margin: 0 auto;
+        }
+    }
+    .content{
+        .box{
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            height: 50px;
+            border-radius: 5px;
+            background-color: $samiWhite;
+            transition: $transition2;
+            &:hover{
+                box-shadow: 0 10px 25px rgba(60, 72, 88, 0.15);
+                transform: translateY(-5px);
+            }
+            .icon{
+                width: 50px;
+                height: 50px;
+                border-left: 1px solid #ddd;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .name{
+                font-size: 1rem;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    #hero {
+        .img-container {
+            height: 400px;
+
+            img {
+                height: 400px;
+            }
+        }
+
+        .content {
+            width: 100%;
+
+            .btn-red {
+                width: 100%;
+            }
+        }
+    }
+
+}

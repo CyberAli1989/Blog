@@ -6,6 +6,9 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+window.addEventListener('load' , function () {
+    document.querySelector('#preloader').remove()
+})
 
 jQuery(function ($) {
     $('#profile_img').on('change', function (e) {
@@ -15,4 +18,6 @@ jQuery(function ($) {
         }
         reader.readAsDataURL(e.target.files['0']);
     });
+
+
 });

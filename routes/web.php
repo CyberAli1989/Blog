@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-    Route::get('/admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard')->middleware('auth' , 'verified');
+Route::get('/', [\App\Http\Controllers\websiteController::class, 'index'])->name('index');
+
+Route::get('/admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'verified');
 
 
 //Route::middleware('auth')->group(function () {
@@ -31,7 +30,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 //    Profile Routes ==================
     Route::prefix('profile')->name('profile.')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\ProfileController::class, 'index'])->name('index');
-        Route::get('/edit', [\App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('edit');
+        Route::get('/edit/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('edit');
+        Route::get('/edit/password', [\App\Http\Controllers\Admin\ProfileController::class, 'changePass'])->name('password');
+        Route::post('/save/password', [\App\Http\Controllers\Admin\ProfileController::class, 'savePass'])->name('password-save');
         Route::post('/update', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('update');
     });
 });
