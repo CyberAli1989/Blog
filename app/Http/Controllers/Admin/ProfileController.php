@@ -7,9 +7,8 @@ use App\Http\Requests\AdminPasswordRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-
+use Image;
 class ProfileController extends Controller
 {
     // Show Profile
@@ -31,19 +30,12 @@ class ProfileController extends Controller
     //Update profile
     public function update(Request $request)
     {
-
         $id = Auth::user()->id;
         $data = User::find($id);
+
         $data->name = $request->name;
         $data->username = $request->username;
         $data->email = $request->email;
-
-
-        $path = 'upload/' . $id;
-        if (File::exists($path)) {
-            File::delete($path);
-        }
-
         if ($request->has('profile_img')) {
             $file = $request->file('profile_img');
             $fileName = date('YmdHi') . $file->getClientOriginalName();
