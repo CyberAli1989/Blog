@@ -37,15 +37,25 @@ $showUser = \App\Models\User::find($id);
                         <span>{{__("Calendar")}}</span>
                     </a>
                 </li>
-
+                {{--Slider Setup--}}
                 <li>
                     <a href="#" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>{{__("Email")}}</span>
+                        <span>{{__("Home Slide Setup")}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">{{__("Inbox")}}</a></li>
-                        <li><a href="#">{{__("Read Email")}}</a></li>
+                        <li><a href="{{route('admin.slider.home')}}">{{__("Home Slide")}}</a></li>
+                    </ul>
+                </li>
+
+                {{--About Me Setup--}}
+                <li>
+                    <a href="#" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>{{__("About Me Setup")}}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('admin.about.index')}}">{{__("About Me")}}</a></li>
                     </ul>
                 </li>
 

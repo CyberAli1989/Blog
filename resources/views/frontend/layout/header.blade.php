@@ -96,17 +96,21 @@
         </div>
     </div>
 </nav>
-<header style="background-image: url({{asset('frontend/assets/imgs/front-end/header.jpg')}})">
+<header
+    style="background-image: url({{(!empty($homeSlider->header_img)?url($homeSlider->header_img):url('upload/no_image.jpg'))}})">
     <div id="particles-js"></div>
     <div class="content">
         <div class="box">
             <div class="box-img">
-                <img src="{{asset('frontend/assets/imgs/front-end/user.png')}}" alt="">
+                <img
+                    src="{{(!empty($homeSlider->header_profile))?url($homeSlider->header_profile):url('upload/no_image.jpg')}}"
+                    alt="">
             </div>
             <div class="box-body">
-                <h2>{{Auth::user()->name}}</h2>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
-                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                <h2>{{$homeSlider->title}}</h2>
+                <p>
+                    {{$homeSlider->short_description}}
+                </p>
             </div>
             <div class="box-footer">
                 <button class="download-button">

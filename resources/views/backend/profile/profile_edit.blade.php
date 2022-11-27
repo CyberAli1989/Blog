@@ -38,7 +38,7 @@
                         </div>
                         {{-- Profile Image --}}
                         <div class="row mb-3">
-                            <label for="profile_img" class="col-sm-2 col-form-label">{{__("Profile Img")}}</label>
+                            <label for="profile_img" data-img="true" class="col-sm-2 col-form-label">{{__("Profile Img")}}</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="file" name="profile_img"
                                        placeholder="{{__("Profile Img")}}"

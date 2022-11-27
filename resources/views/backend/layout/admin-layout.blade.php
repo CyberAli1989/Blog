@@ -6,6 +6,7 @@
     <meta charset="utf-8"/>
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”csrf-token” content=”{{ csrf_token() }}”>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
 
@@ -77,8 +78,7 @@
 <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/toastr/build/toastr.min.js')}}"></script>
-
-
+{{--<script src="{{asset('backend/assets/js/ckeditor.js')}}"></script>--}}
 <!-- apexcharts -->
 {{--<script src="{{asset('backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>--}}
 
@@ -100,6 +100,18 @@
 <!-- App js -->
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
 
+{{--CkEditor CDN--}}
+<script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+<script>
+
+    {{--let xupload = "{{route('admin.ckeditor.upload', ['_token' => csrf_token() ])}}";--}}
+    {{--CKEDITOR.replace('editor1', {});--}}
+    ClassicEditor
+        .create(document.querySelector('#editor1'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
 @include('components.toaster')
 </body>
