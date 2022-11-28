@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="img-container">
-                    <img src="{{asset('frontend/assets/imgs/front-end/user.png')}}" alt="">
+                    <img src="{{(!empty($about->image)?asset($about->image):url('upload/no-image.jpg'))}}" alt="">
                 </div>
             </div>
             <div class="col-lg-8">

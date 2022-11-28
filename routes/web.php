@@ -17,7 +17,7 @@ Route::get('/', [\App\Http\Controllers\websiteController::class, 'index'])->name
 
 Route::get('/admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'verified');
 
-Route::post('upload_image', 'AboutMeController@uploadImage')->name('ck');
+//Route::post('upload_image', 'AboutMeController@uploadImage')->name('ck');
 
 //Route::middleware('auth')->group(function () {
 //    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -26,9 +26,9 @@ Route::post('upload_image', 'AboutMeController@uploadImage')->name('ck');
 //});
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::post('ckeditor/upload', [\App\Http\Controllers\Admin\CkeditorController::class, 'upload'])->name('ckeditor.upload');
     Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::get('ckeditor', 'Admin\CkeditorController@index');
-    Route::post('ckeditor/upload', 'Admin\CkeditorController@upload')->name('ckeditor.upload');
     Route::get('/logout', [\App\Http\Controllers\Admin\DashboardController::class, 'logout'])->name('logout');
 //    Profile Routes ==================
     Route::prefix('profile')->name('profile.')->group(function () {

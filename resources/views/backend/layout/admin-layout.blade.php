@@ -101,13 +101,18 @@
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
 
 {{--CkEditor CDN--}}
-<script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+{{--<script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>--}}
+<script src="{{asset('backend/assets/js/ckeditor.js')}}"></script>
 <script>
 
-    {{--let xupload = "{{route('admin.ckeditor.upload', ['_token' => csrf_token() ])}}";--}}
-    {{--CKEDITOR.replace('editor1', {});--}}
     ClassicEditor
-        .create(document.querySelector('#editor1'))
+        .create(document.querySelector('#editor1'), {
+            ckfinder: {
+                uploadUrl: '{{route('admin.ckeditor.upload').'?_token='. csrf_token()}}',
+                plugins: [Image],
+            },
+            language: 'fa'
+        })
         .catch(error => {
             console.error(error);
         });

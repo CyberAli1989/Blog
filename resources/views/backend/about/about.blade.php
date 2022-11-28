@@ -1,6 +1,5 @@
 @extends('backend.layout.admin-layout')
 
-
 @section('content')
 
     <div class="row">
@@ -70,7 +69,6 @@
                 </div>
             </div>
         </div> <!-- end col -->
-
 
     </div>
 

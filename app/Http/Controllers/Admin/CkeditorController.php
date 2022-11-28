@@ -20,13 +20,10 @@ class CkeditorController extends Controller
 
             $request->file('upload')->move(public_path('images'), $fileName);
 
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+//            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
             $url = asset('images/' . $fileName);
-            $msg = 'Image uploaded successfully';
-            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+            return response()->json(['fileName' => $fileName , 'uploaded' => 1 , 'url' => $url]) ;
 
-            @header('Content-type: text/html; charset=utf-8');
-            echo $response;
         }
     }
 }
