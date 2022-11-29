@@ -58,6 +58,26 @@ $showUser = \App\Models\User::find($id);
                         <li><a href="{{route('admin.about.index')}}">{{__("About Me")}}</a></li>
                     </ul>
                 </li>
+                {{--Category Setup--}}
+                <li>
+                    <a href="#" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>{{__("Category Setup")}}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('admin.category.create')}}">{{__("Category")}}</a></li>
+                    </ul>
+                </li>
+                {{--Portfolio Setup--}}
+                <li>
+                    <a href="#" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>{{__("Portfolio Setup")}}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('admin.portfolio.create')}}">{{__("Portfolio")}}</a></li>
+                    </ul>
+                </li>
 
 
                 <li class="menu-title">Components</li>

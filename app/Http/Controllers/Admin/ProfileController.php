@@ -41,7 +41,7 @@ class ProfileController extends Controller
             $fileName = date('YmdHi') . $file->getClientOriginalName();
             $file->move('upload/' . $id, $fileName);
             $data['profile_img'] = $fileName;
-        }
+        };
 
         $data->save();
 

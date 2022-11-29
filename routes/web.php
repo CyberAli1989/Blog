@@ -48,6 +48,20 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/about/update/{about}', [\App\Http\Controllers\Admin\AboutMeController::class, 'UpdateAboutMe'])->name('update');
         Route::post('/about/create/', [\App\Http\Controllers\Admin\AboutMeController::class, 'CreateAboutMe'])->name('create');
     });
+    Route::prefix('category')->name('category.')->group(function () {
+        Route::get('/category', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('index');
+        Route::get('/category/create/', [\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('create');
+        Route::post('/category/store', [\App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('store');
+//        Route::post('/category/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('update');
+//        Route::post('/category/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('update');
+    });
+    Route::prefix('portfolio')->name('portfolio.')->group(function () {
+        Route::get('/portfolio', [\App\Http\Controllers\Admin\portfolioController::class, 'index'])->name('index');
+        Route::get('/portfolio/create/', [\App\Http\Controllers\Admin\portfolioController::class, 'create'])->name('create');
+        Route::post('/portfolio/store', [\App\Http\Controllers\Admin\portfolioController::class, 'store'])->name('store');
+//        Route::post('/portfolio/update/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'update'])->name('update');
+//        Route::post('/portfolio/update/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'edit'])->name('update');
+    });
 });
 
 require __DIR__ . '/auth.php';

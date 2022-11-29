@@ -11,10 +11,9 @@
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
 
     <!-- jquery.vectormap css -->
-    <link href="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}"
-          rel="stylesheet" type="text/css"/>
-
-    <!-- DataTables -->
+{{--    <link href="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}"--}}
+{{--          rel="stylesheet" type="text/css"/>--}}
+<!-- DataTables -->
     <link href="{{asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
           type="text/css"/>
 
@@ -29,6 +28,9 @@
     <link href="{{asset('backend/assets/css/icons-rtl.min.css')}}" rel="stylesheet" type="text/css"/>
 
     <link href="{{asset('backend/assets/libs/toastr/build/toastr.min.css')}}" rel="stylesheet" type="text/css"/>
+    <!-- Select2 -->
+    <link href="{{asset('backend/assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css">
+
     <!-- App Css-->
     <link href="{{asset('backend/assets/css/app-rtl.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -94,7 +96,8 @@
 <!-- Responsive examples -->
 <script src="{{asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-
+<script src="{{asset('backend/assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/form-advanced.init.js')}}"></script>
 <script src="{{asset('backend/assets/js/pages/dashboard.init.js')}}"></script>
 
 <!-- App js -->

@@ -6,9 +6,6 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-window.addEventListener('load', function () {
-    document.querySelector('#preloader').remove()
-})
 
 jQuery(function ($) {
     $('form #profile_img').on('change', function (e) {
@@ -36,5 +33,10 @@ jQuery(function ($) {
         reader.readAsDataURL(e.target.files['0']);
     });
 
+    $('form #name').on('keyup', function () {
+        let inputVal;
+        inputVal = $(this).val()
+        $('input[name=slug]').val(inputVal.split(' ').join('_'))
+    })
 
 });
