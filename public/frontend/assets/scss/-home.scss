@@ -1,3 +1,4 @@
+
 #hero {
     .img-container {
         border: 4px solid #9f9f9f;
@@ -39,84 +40,15 @@
             line-height: 1.7;
         }
 
-        .btn-red {
-            background-color: $red;
-            color: $white;
-            width: 25%;
-            transition: $transition1;
-
-            &:hover {
-                background-color: lighten($red, 3%);
-            }
-        }
+        @include btn-color($red)
     }
 }
 
 #hobbits {
-    .title {
-        text-align: center;
+    @include title;
 
-        h2 {
-            color: $black;
-            position: relative;
-            font-weight: 600;
-
-            &:before {
-                content: '';
-                position: absolute;
-                height: 2px;
-                width: 30px;
-                background-color: $red;
-                display: inline;
-                top: 58px;
-                left: calc(50% + 17px);
-            }
-            &:after {
-                content: '';
-                position: absolute;
-                height: 2px;
-                width: 30px;
-                background-color: $red;
-                top: 58px;
-                right: calc(50% + 17px);
-            }
-        }
-
-        span {
-            position: relative;
-
-            &:before {
-                content: '';
-                position: absolute;
-                width: 16px;
-                height: 16px;
-                top: 100%;
-                border: 2px solid $red;
-                border-radius: 30px 30px 30px 0;
-                transform: rotate(45deg);
-            }
-
-            &:after {
-                content: '';
-                position: absolute;
-                width: 16px;
-                top: 100%;
-                height: 16px;
-                left: 0px;
-                border: 2px solid $red;
-                border-radius: 30px 0 30px 30px;
-                transform: rotate(45deg);
-            }
-        }
-
-        p{
-            width: 60%;
-            font-size: 1rem;
-            margin: 0 auto;
-        }
-    }
-    .content{
-        .box{
+    .content {
+        .box {
             display: flex;
             align-items: center;
             border: 1px solid #ddd;
@@ -124,11 +56,13 @@
             border-radius: 5px;
             background-color: $samiWhite;
             transition: $transition2;
-            &:hover{
+
+            &:hover {
                 box-shadow: 0 10px 25px rgba(60, 72, 88, 0.15);
                 transform: translateY(-5px);
             }
-            .icon{
+
+            .icon {
                 width: 50px;
                 height: 50px;
                 border-left: 1px solid #ddd;
@@ -137,10 +71,66 @@
                 align-items: center;
                 justify-content: center;
             }
-            .name{
+
+            .name {
                 font-size: 1rem;
                 margin-right: 15px;
             }
+        }
+    }
+}
+
+#portfolio {
+    @include title;
+    .btns{
+        width: 100%;
+        text-align: center;
+        @include btn-color($red ,15%)
+
+    }
+    .box{
+        border: 3px solid $light-boarder-color;
+        background-color: $white;
+        border-radius: 5px;
+        overflow: hidden;
+        .box-img{
+            height: 280px;
+            background-color: #c5c5c5;
+            position: relative;
+            a{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+                transform: translate(-50% , -50%);
+                color: $white;
+                font-size: 1.2rem;
+                opacity: 0;
+                visibility: hidden;
+                width: 50px;
+                height: 50px;
+                background-color: rgba($black , 50%);
+                border-radius: 50%;
+                transition: $transition1;
+            }
+            &:hover{
+                a{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            img{
+                width: 100%;
+                height: 280px;
+                object-fit: cover;
+            }
+        }
+        .box-content{
+            text-align: center;
         }
     }
 }
