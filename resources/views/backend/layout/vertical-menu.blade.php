@@ -10,7 +10,9 @@ $showUser = \App\Models\User::find($id);
         <!-- User details -->
         <div class="user-profile text-center mt-3">
             <div class="">
-                <img src="{{(!empty($showUser->profile_img))? url('upload/'.$id.'/'.$showUser->profile_img):url('upload/no_image.jpg')}}" alt="" class="avatar-md rounded-circle">
+                <img
+                    src="{{(!empty($showUser->profile_img))? url('upload/'.$id.'/'.$showUser->profile_img):url('upload/no_image.jpg')}}"
+                    alt="" class="avatar-md rounded-circle">
             </div>
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{$showUser->name}}</h4>
@@ -66,6 +68,7 @@ $showUser = \App\Models\User::find($id);
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('admin.category.create')}}">{{__("Category")}}</a></li>
+                        <li><a href="{{route('admin.category.index')}}">{{__("Show All Categories")}}</a></li>
                     </ul>
                 </li>
                 {{--Portfolio Setup--}}
@@ -76,9 +79,9 @@ $showUser = \App\Models\User::find($id);
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('admin.portfolio.create')}}">{{__("Portfolio")}}</a></li>
+                        <li><a href="{{route('admin.portfolio.index')}}">{{__("Show All Portfolio")}}</a></li>
                     </ul>
                 </li>
-
 
                 <li class="menu-title">Components</li>
 

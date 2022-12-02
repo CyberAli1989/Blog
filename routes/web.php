@@ -50,17 +50,19 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     });
     Route::prefix('category')->name('category.')->group(function () {
         Route::get('/category', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('index');
-        Route::get('/category/create/', [\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('create');
-        Route::post('/category/store', [\App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('store');
-//        Route::post('/category/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('update');
-//        Route::post('/category/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('update');
+        Route::get('/edit/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'catEdit'])->name('edit');
+        Route::get('/create/', [\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('create');
+        Route::post('/store', [\App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('store');
+        Route::post('/category/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('update');
+        Route::get('/delete/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('delete');
     });
     Route::prefix('portfolio')->name('portfolio.')->group(function () {
         Route::get('/portfolio', [\App\Http\Controllers\Admin\portfolioController::class, 'index'])->name('index');
-        Route::get('/portfolio/create/', [\App\Http\Controllers\Admin\portfolioController::class, 'create'])->name('create');
-        Route::post('/portfolio/store', [\App\Http\Controllers\Admin\portfolioController::class, 'store'])->name('store');
-//        Route::post('/portfolio/update/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'update'])->name('update');
-//        Route::post('/portfolio/update/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'edit'])->name('update');
+        Route::get('/edit/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'edit'])->name('edit');
+        Route::get('/create/', [\App\Http\Controllers\Admin\portfolioController::class, 'create'])->name('create');
+        Route::post('/store', [\App\Http\Controllers\Admin\portfolioController::class, 'store'])->name('store');
+        Route::post('/update/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'update'])->name('update');
+        Route::get('/delete/{portfolio}', [\App\Http\Controllers\Admin\portfolioController::class, 'destroy'])->name('delete');
     });
 });
 

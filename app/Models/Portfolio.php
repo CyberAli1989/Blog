@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Portfolio whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Portfolio whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $category_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Portfolio whereCategoryId($value)
  */
 class Portfolio extends Model
 {

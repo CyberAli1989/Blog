@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -15,9 +14,10 @@
                             <label for="category" class="col-sm-2 col-form-label">{{__("Category")}}</label>
                             <div class="col-sm-10">
                                 <select id="category" name="category_id" class="form-control select2">
-                                    <option>{{__("Select")}}</option>
                                     @foreach($category as $cat)
-                                        <option value="{{$cat->id}}">{{$cat->title}}</option>
+                                        <option value="{{$cat->id}}">
+                                            {{$cat->title}}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="text-end mt-3">
                                 <label for="profile_img">
                                     <img id="show_img"
-                                         src="{{(!empty($portfolio->image))? url($editUser->image):url('upload/no_image.jpg')}}"
+                                         src="{{(!empty($portfolio->image))? url($portfolio->image):url('upload/no_image.jpg')}}"
                                          alt="avatar-5"
                                          class="rounded avatar-lg">
                                 </label>
@@ -67,17 +67,16 @@
                         {{-- Submit --}}
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input class="btn btn-dark w-100" type="submit" value="{{(!empty($portfolio->slug))?__("Update portfolio"):__("Create portfolio")}}">
+                                <input class="btn btn-dark w-100" type="submit"
+                                       value="{{(!empty($portfolio->slug))?__("Update portfolio"):__("Create portfolio")}}">
                             </div>
                         </div>
                     </form>
-                    <!-- end row -->
                 </div>
             </div>
         </div> <!-- end col -->
 
 
     </div>
-
 
 @endsection

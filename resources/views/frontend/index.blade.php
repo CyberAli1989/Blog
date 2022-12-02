@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -169,7 +169,7 @@
             </div>
             <div id="sort_items" class="row py-5">
                 @foreach($portfolio as $item)
-                <div class="col-lg-4 my-2 cat{{$item->category->id}} items">
+                <div class="col-lg-3 my-2 cat{{$item->category->id}} items">
                     <div class="box">
                         <div class="box-img">
                             <a href="#"><span class="fa fa-eye"></span></a>
